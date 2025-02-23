@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Professional Photography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        /* Contact Header */
+        .contact-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('contact-bg.jpg') center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .contact-header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            font-weight: 300;
+        }
+
+        /* Contact Container */
+        .contact-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* Professional Form Styling */
+        .contact-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            padding-left: 40px;
+        }
+
+        .form-input:focus {
+            border-color: #2c3e50;
+            box-shadow: 0 0 0 3px rgba(44,62,80,0.1);
+            outline: none;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 38px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .submit-btn {
+            background: #2c3e50;
+            color: white;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #34495e;
+            transform: translateY(-1px);
+        }
+
+        /* Contact Info */
+        
+        /* Contact Info */
+        .contact-info {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+        }
+
+        .info-item {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .info-item i {
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            font-size: 24px;
+            color: #2c3e50;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #34495e;
+        }
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Aakash<span></span></a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="booking.html" class="cta-button">Book Session</a></li>
+            </ul>
+
+
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Header -->
+    <header class="contact-header">
+        <h1>Get in Touch</h1>
+        <p>Let's discuss your next photography project</p>
+    </header>
+
+    <!-- Main Contact Section -->
+    <div class="contact-container">
+        <!-- Professional Contact Form -->
+        <section class="contact-form">
+            <h2 style="margin-bottom: 30px; color: #2c3e50;">Contact Form</h2>
+            <form id="contactForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name</label>
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="name" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="email" class="form-input" placeholder="john@example.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone Number</label>
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" class="form-input" placeholder="+1 (555) 000-0000">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="message">Project Details</label>
+                    <textarea id="message" class="form-input" placeholder="Describe your project..." 
+                              style="height: 120px; padding: 15px;" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="contact-info">
+            <h2>Contact Information</h2>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h3>Studio Address</h3>
+                    <p>123 Photography Lane<br>Creative City, CC 45678</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h3>Phone</h3>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h3>Email</h3>
+                    <p>contact@yourstudio.com</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+    </div>
+
+    
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <!-- Info Column -->
+            <div class="footer-column">
+                <h3>Info</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </div>
+
+            <!-- Explore Column -->
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Latest weddings</a></li>
+                    <li><a href="service.html">Services</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal Column -->
+           
+
+            <!-- Newsletter Column -->
+            <div class="footer-column">
+                <h3>Newsletter</h3>
+                <p class="newsletter-text">
+                    Subscribe to our newsletter for a weekly dose of news, updates, helpful tips, and
+                    exclusive offers.
+                </p>
+                <form class="newsletter-form">
+                    <input 
+                        type="email" 
+                        class="newsletter-input"
+                        placeholder="Enter your email"
+                        required
+                    >
+                    <button type="submit" class="newsletter-button">
+                        Subscribe
+                    </button>
+                </form>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Aakash. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // SweetAlert confirmation
+            Swal.fire({
+                title: 'Confirm Submission',
+                text: 'Are you ready to send your message?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#2c3e50',
+                cancelButtonColor: '#666',
+                confirmButtonText: 'Yes, send it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Simulate form submission
+                    Swal.fire({
+                        title: 'Message Sent!',
+                        text: 'We\'ll get back to you within 24 hours',
+                        icon: 'success',
+                        confirmButtonColor: '#2c3e50'
+                    });
+                    
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

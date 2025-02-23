@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About US</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* About Section */
+
+        .about-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background-image: url('images/aboutme/profile1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .about-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #eeeeee;
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                height: 100vh;
+            }
+
+            .about-hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- // -----NAvbar---- -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Aakash<span>Clicks</span></a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="booking.html" class="cta-button">Book Session</a></li>
+            </ul>
+
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- // -----NAvbar----- -->
+
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <h1>About </h1>
+            <p class="subtitle">Discover Who We Are and What We Stand For</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="images/aboutme/profile1.jpg" alt="Photographer Profile">
+            </div>
+
+            <div class="about-content">
+                <span class="about-subtitle">About Me</span>
+                <h2 class="about-title">Capturing Life's Beautiful Moments</h2>
+
+                <p class="about-text">
+                    With over a decade of experience in professional photography, I specialize in creating timeless
+                    visual stories that resonate with emotion. My passion lies in finding the perfect balance between
+                    light, composition, and genuine expression.
+                </p>
+
+                <div class="specialties">
+                    <div class="specialty-item">
+                        <i class="fas fa-camera specialty-icon"></i>
+                        <span>Portrait Photography</span>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-ring specialty-icon"></i>
+                        <span>Wedding Photography</span>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-landmark specialty-icon"></i>
+                        <span>Architecture</span>
+                    </div>
+                    <div class="specialty-item">
+                        <i class="fas fa-leaf specialty-icon"></i>
+                        <span>Nature & Landscape</span>
+                    </div>
+                </div>
+
+                <button class="about-button">View Full Portfolio</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Info Column -->
+                <div class="footer-column">
+                    <h3>Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                    </ul>
+                </div>
+
+                <!-- Explore Column -->
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Latest weddings</a></li>
+                        <li><a href="service.html">Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Column -->
+
+
+                <!-- Newsletter Column -->
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p class="newsletter-text">
+                        Subscribe to our newsletter for a weekly dose of news, updates, helpful tips, and
+                        exclusive offers.
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                        <button type="submit" class="newsletter-button">
+                            Subscribe
+                        </button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aakash. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        window.addEventListener('scroll', function () {
+            const cards = document.querySelectorAll('.style-card');
+            const windowHeight = window.innerHeight;
+
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < windowHeight - 100) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle?.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
