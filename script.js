@@ -24,37 +24,17 @@ $(document).ready(function(){
     $('.homepage-slider').slick({
         dots: true,
         infinite: true,
-        speed: 600,
+        speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
         arrows: true,
-        centerMode: false,
-        variableWidth: false,
-        cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
-        prevArrow: '<button class="slick-prev" aria-label="Previous"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="white" d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg></button>',
-        nextArrow: '<button class="slick-next" aria-label="Next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="white" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg></button>',
         responsive: [
-            {
-                breakpoint: 1440,
-                settings: {
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    arrows: true
-                }
-            }
+            { breakpoint: 1440, settings: { slidesToShow: 3 } },
+            { breakpoint: 1024, settings: { slidesToShow: 2 } },
+            { breakpoint: 768, settings: { slidesToShow: 1, arrows: true, dots: false } },
+            { breakpoint: 480, settings: { slidesToShow: 1, arrows: false, dots: true } }
         ]
     });
 });
@@ -184,3 +164,102 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // -----testimonial-----
 
+
+// Blog posts data
+const blogPosts = [
+    {
+        id: 1,
+        title: "Latest Wedding 2025",
+        excerpt: "Discover the upcoming wedding trends that will dominate the industry this year.",
+        image: "images/banner/banner1.jpg",
+        author: "Sarah Johnson",
+        date: "March 15, 2025",
+        readTime: "5 min read",
+        category: "Fashion"
+    },
+    {
+        id: 2,
+        title: "Sustainable photography Guide",
+        excerpt: "Learn how to make environmentally conscious photography decisions without compromising on style.",
+        image: "images/blog/blog2.jpg",
+        author: "Mike Chen",
+        date: "March 12, 2025",
+        readTime: "4 min read",
+        category: "Sustainability"
+    },
+    {
+        id: 3,
+        title: "Portrait",
+        excerpt: "Master the art of taking portrait pictures",
+        image: "images/blog/blog3.jpg",
+        author: "Emma Davis",
+        date: "March 10, 2025",
+        readTime: "6 min read",
+        category: "Style"
+    }
+];
+
+// Function to create blog post cards
+function createBlogPost(post) {
+    return `
+        <article class="blog-card animate-fade-up">
+            <div class="blog-card-image">
+                <img src="${post.image}" alt="${post.title}" />
+                <span class="blog-card-category">${post.category}</span>
+            </div>
+            <div class="blog-card-content">
+                <h3>${post.title}</h3>
+                <p>${post.excerpt}</p>
+                <div class="blog-card-meta">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        ${post.author}
+                    </span>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        ${post.readTime}
+                    </span>
+                </div>
+                <div class="blog-card-actions">
+                    <a href="#" class="read-more">
+                        Read More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </a>
+                    <div class="action-buttons">
+                        <button class="action-button" aria-label="Like">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <button class="action-button" aria-label="Share">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </article>
+    `;
+}
+
+// Render blog posts
+document.addEventListener('DOMContentLoaded', () => {
+    const blogGrid = document.getElementById('blogGrid');
+    blogGrid.innerHTML = blogPosts.map(post => createBlogPost(post)).join('');
+
+    // Newsletter form submission
+    const newsletterForm = document.getElementById('newsletterForm');
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = e.target.querySelector('input[type="email"]').value;
+        alert(`Thank you for subscribing with: ${email}`);
+        e.target.reset();
+    });
+
+    // Add click handlers for like and share buttons
+    document.querySelectorAll('.action-button').forEach(button => {
+        button.addEventListener('click', () => {
+            button.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+            }, 200);
+        });
+    });
+});

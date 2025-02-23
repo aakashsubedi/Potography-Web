@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +9,63 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="styles.css">
     <style>
-        
         /* Contact Header */
-        .contact-header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('contact-bg.jpg') center/cover;
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
+
+        .contact-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background-image: url('images/aboutme/profile1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .contact-header h1 {
-            font-size: 3.2rem;
-            margin-bottom: 15px;
-            letter-spacing: 1.5px;
-            font-weight: 300;
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .contact-hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #eeeeee;
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero {
+                height: 100vh;
+            }
+
+            .contact-hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-hero-content .subtitle {
+                font-size: 1.2rem;
+            }
         }
 
         /* Contact Container */
@@ -40,7 +83,7 @@
             background: #fff;
             padding: 40px;
             border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
         .form-group {
@@ -68,7 +111,7 @@
 
         .form-input:focus {
             border-color: #2c3e50;
-            box-shadow: 0 0 0 3px rgba(44,62,80,0.1);
+            box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1);
             outline: none;
         }
 
@@ -106,13 +149,13 @@
         }
 
         /* Contact Info */
-        
+
         /* Contact Info */
         .contact-info {
             background: white;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
         }
 
         .info-item {
@@ -142,11 +185,12 @@
         .social-links a:hover {
             color: #34495e;
         }
+
         @media (max-width: 768px) {
             .contact-container {
                 grid-template-columns: 1fr;
             }
-            
+
             .contact-header h1 {
                 font-size: 2.2rem;
             }
@@ -157,17 +201,18 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">Aakash<span></span></a>
-            
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="service.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="booking.html" class="cta-button">Book Session</a></li>
             </ul>
 
@@ -177,12 +222,15 @@
             </button>
         </div>
     </nav>
-
     <!-- Contact Header -->
-    <header class="contact-header">
-        <h1>Get in Touch</h1>
-        <p>Let's discuss your next photography project</p>
-    </header>
+
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1>Contact </h1>
+            <p class="subtitle">Discover Who We Are and What We Stand For</p>
+        </div>
+    </section>
+
 
     <!-- Main Contact Section -->
     <div class="contact-container">
@@ -206,13 +254,13 @@
                 <div class="form-group">
                     <label class="form-label" for="phone">Phone Number</label>
                     <i class="fas fa-phone input-icon"></i>
-                    <input type="tel" id="phone" class="form-input" placeholder="+1 (555) 000-0000">
+                    <input type="tel" id="phone" class="form-input" placeholder="+1234567890">
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="message">Project Details</label>
-                    <textarea id="message" class="form-input" placeholder="Describe your project..." 
-                              style="height: 120px; padding: 15px;" required></textarea>
+                    <textarea id="message" class="form-input" placeholder="Describe your event..."
+                        style="height: 120px; padding: 15px;" required></textarea>
                 </div>
 
                 <button type="submit" class="submit-btn">Send Message</button>
@@ -226,21 +274,21 @@
                 <i class="fas fa-map-marker-alt"></i>
                 <div>
                     <h3>Studio Address</h3>
-                    <p>123 Photography Lane<br>Creative City, CC 45678</p>
+                    <p>Bharatpur<br>Nepal</p>
                 </div>
             </div>
             <div class="info-item">
                 <i class="fas fa-phone"></i>
                 <div>
                     <h3>Phone</h3>
-                    <p>+1 (555) 123-4567</p>
+                    <p>+977 9804131198</p>
                 </div>
             </div>
             <div class="info-item">
                 <i class="fas fa-envelope"></i>
                 <div>
                     <h3>Email</h3>
-                    <p>contact@yourstudio.com</p>
+                    <p>aakkashsubedi@gmail.com</p>
                 </div>
             </div>
             <div class="social-links">
@@ -252,73 +300,70 @@
         </section>
     </div>
 
-    
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-grid">
-            <!-- Info Column -->
-            <div class="footer-column">
-                <h3>Info</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                </ul>
-            </div>
 
-            <!-- Explore Column -->
-            <div class="footer-column">
-                <h3>Explore</h3>
-                <ul class="footer-links">
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#">Latest weddings</a></li>
-                    <li><a href="service.html">Services</a></li>
-                </ul>
-            </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Info Column -->
+                <div class="footer-column">
+                    <h3>Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                    </ul>
+                </div>
 
-            <!-- Legal Column -->
-           
+                <!-- Explore Column -->
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Latest weddings</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
 
-            <!-- Newsletter Column -->
-            <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p class="newsletter-text">
-                    Subscribe to our newsletter for a weekly dose of news, updates, helpful tips, and
-                    exclusive offers.
-                </p>
-                <form class="newsletter-form">
-                    <input 
-                        type="email" 
-                        class="newsletter-input"
-                        placeholder="Enter your email"
-                        required
-                    >
-                    <button type="submit" class="newsletter-button">
-                        Subscribe
-                    </button>
-                </form>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
+                <!-- Legal Column -->
+
+
+                <!-- Newsletter Column -->
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p class="newsletter-text">
+                        Subscribe to our newsletter for a weekly dose of news, updates, helpful tips, and
+                        exclusive offers.
+                    </p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                        <button type="submit" class="newsletter-button">
+                            Subscribe
+                        </button>
+                    </form>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aakash. All rights reserved.</p>
+            </div>
         </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2025 Aakash. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="script.js"></script>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -342,7 +387,7 @@
                         icon: 'success',
                         confirmButtonColor: '#2c3e50'
                     });
-                    
+
                     // Reset form
                     document.getElementById('contactForm').reset();
                 }
@@ -350,4 +395,5 @@
         });
     </script>
 </body>
+
 </html>
